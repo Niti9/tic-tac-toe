@@ -1,0 +1,39 @@
+install nextjs
+create-next-app
+
+//install bcrypt mongoose
+npm install bcrypt mongoose next-auth
+
+//when we import useState,useEffect or anything
+//that use or depend  on client before that on top we have to 
+//declare use-client statement 
+"use client";
+
+
+create authorization from console google cloud 
+using authorization means "client id" and "client secret" here from env
+
+
+//we restart cluster cloud mongodb
+//create new user in database access 
+//username = Nit
+//password = N.I.T.I.N
+//and then try to create new user or check already present user
+
+//to get NEXTAUTH_SECRET read documentation of NextAuth.js search secret
+//and copy that SSL code 
+//and paste it on online website openssl like 👎 
+ https://www.cryptool.org/en/cto/openssl
+//then at last we'll get code on that website use that 
+//code in .env NEXTAUTH_SECRET code
+
+
+//change next.config.js file  from the code of javascript master github
+
+
+//we get error 400 
+//so we add below url into google console cloud 
+// inside 0Auth 2.0 client Ids inside "web client 1" add url in Authorized redirect URIs
+GET/POST/api/auth/callback/:provider
+//we change it by
+"http://localhost:3000/api/auth/callback/google" 
