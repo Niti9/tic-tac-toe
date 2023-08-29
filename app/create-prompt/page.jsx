@@ -8,42 +8,50 @@ import { useRouter } from "next/navigation";
 import Form from "@components/Form";
 
 const CreatePrompt = () => {
-  const [submitting, setSubmitting] = useState(false);
+
+  //ROUTER AND SESSION DECLARE HERE
+  const router = useRouter();
+  const { data: session } = useSession();
+
+  const [submitting, setIsSubmitting] = useState(false);
   const [post, setPost] = useState({
     //another useState
-    prompt: "",
-    tag: "",
+    prompt: '',
+    tag: '',
   });
 
   const createPrompt = async (e) => {
     e.preventDefault();
-    setSubmitting(true);
+    setIsSubmitting(true);
 
 
     //CREATE OWN API WITHOUT EXPRESS, CONTROLLER,ROUTER ETC....
     try {
+      console.log("trying");
       const response = await fetch("/api/prompt/new", {
         method: "POST",
         body: JSON.stringify({
           prompt: post.prompt,
-          userId: Session?.user.id,
+          userId: session?.user.id,
           tag: post.tag,
         }),
       });
 
-      if (response.ok) {
+      // console.log(response); //to check response
+      if (response.ok) { //agar submit successfully hoga to hum home page par waapas aajayenge
         router.push("/");
       }
     } catch (error) {
       console.log(error);
     } finally {
-      setSubmitting(false);
+      setIsSubmitting(false);
+      // console.log("finally")
     }
   };
 
   return (
     <Form
-      type="Create"
+      type='Create'
       post={post}
       setPost={setPost}
       submitting={submitting}
@@ -53,3 +61,17 @@ const CreatePrompt = () => {
 };
 
 export default CreatePrompt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

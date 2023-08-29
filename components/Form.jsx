@@ -27,7 +27,7 @@ const Form = ({ post, setPost, submitting, handleSubmit, type }) => {
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder="Write your prompt here..."
             required
-            className="form textarea"
+            className="form_textarea"
           />
         </label>
 
@@ -66,10 +66,8 @@ const Form = ({ post, setPost, submitting, handleSubmit, type }) => {
           <button
             type="submit"
             disabled={submitting}
-            className="px-5 py-1.5 text-sm"
-            bg-primary-orange
-            rounded-full
-            text-white
+            className="px-5 py-1.5 text-sm
+            bg-primary-orange rounded-full text-white"
           >
             {submitting ? `${type}...` : type}   
             

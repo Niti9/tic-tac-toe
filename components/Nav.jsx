@@ -27,7 +27,6 @@ const Nav = () => {
       <Link href="/" className="flex gap-2 fle-center">
         <Image
           src="/assets/DBUU2.png"
-
           // src={session?.user.image} //image of user email icon
           alt="Logo"
           width={60} //in pixels
@@ -83,7 +82,7 @@ const Nav = () => {
       <div className="sm:hidden flex relative">
         {/* check if user exists or not
         here isloggedUser change with "session?user" */}
-        {session?.user ?(
+        {session?.user ? (
           <div className="flex">
             <Image
               src={session?.user.image} //user icon image

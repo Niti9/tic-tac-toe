@@ -40,6 +40,12 @@
   filter: invert(1);
 }
 
+.object-contain{
+   width:60px;
+   height:60px;
+
+}
+
 .gradient {
   height: fit-content;
   z-index: 3;
