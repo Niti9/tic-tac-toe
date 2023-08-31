@@ -17,6 +17,7 @@ const Home = () => {
         discover, create and share creative prompts
       </p>
       <Feed/>
+      
     </section>
   );
 };

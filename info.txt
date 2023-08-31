@@ -13,6 +13,23 @@ npm install bcrypt mongoose next-auth
 create authorization from console google cloud 
 using authorization means "client id" and "client secret" here from env
 
+// google console cloud mein "API & SERVICES "
+mein jaakar permission lenge 
+aur "OAuth consent screen" mein details set karenge
+//app name , user email  
+//authorized domain mein "http://localhost:3000"
+//developer info mein email 
+
+// then credentials mein create karenge aur "web application" set karenge
+//aur ek name bhi denge jaise "web client 1"
+//authorized javascript origins mein 
+http://localhost:3000 denge aur
+wohi same authorized redirect url mein bhi denge
+//ek aur url denge redirect ke liye
+http://localhost:3000/api/auth/callback/google
+
+//aur wahan se client id aur client secret copy karlenge .env mein phir use kar sakte hai
+
 
 //we restart cluster cloud mongodb
 //create new user in database access 
@@ -37,3 +54,11 @@ using authorization means "client id" and "client secret" here from env
 GET/POST/api/auth/callback/:provider
 //we change it by
 "http://localhost:3000/api/auth/callback/google" 
+
+
+[] Implement Search
+    -Search by prompt
+    -Search by tag
+    -Search by username
+[] Implement Click on tag
+[] Implement View other profiles
